@@ -43,8 +43,9 @@ class GarminClient:
         if self.garth_token:
           try:
             self.garthClient.client.loads(self.garth_token)
-            # 校验 token 是否有效
-            _ = self.garthClient.client.username
+            # 校验 token: 只检查 oauth1_token 是否已设置 (不调 profile 接口, 避免误判)
+            assert self.garthClient.client.oauth1_token is not None
+            assert self.garthClient.client.oauth2_token is not None
             token_loaded = True
             logger.info("Garmin logged in via garth token (no MFA required).")
           except Exception as token_err:
