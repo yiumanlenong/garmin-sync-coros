@@ -12,7 +12,7 @@ env:
   GARMIN_EMAIL: ${{ secrets.GARMIN_EMAIL }}
   GARMIN_PASSWORD: ${{ secrets.GARMIN_PASSWORD }}
   GARMIN_NEWEST_NUM: ${{ secrets.GARMIN_NEWEST_NUM }}
-
+  GARMIN_GARTH_TOKEN: ${{ secrets.GARMIN_GARTH_TOKEN }}
   ## Coros配置
   COROS_EMAIL: ${{ secrets.COROS_EMAIL }}
   COROS_PASSWORD: ${{ secrets.COROS_PASSWORD }}
