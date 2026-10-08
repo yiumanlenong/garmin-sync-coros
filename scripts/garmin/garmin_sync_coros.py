@@ -88,6 +88,7 @@ if __name__ == "__main__":
       
     except Exception as err:
       print(err)
+  sync_failed = False
   for un_sync_info in file_path_list:
     try:
       client = None
@@ -107,4 +108,6 @@ if __name__ == "__main__":
     except Exception as err:
       print(err)
       garmin_db.updateExceptionSyncStatus(un_sync_id)
-      exit()
+      sync_failed = True
+  if sync_failed:
+    sys.exit(1)
